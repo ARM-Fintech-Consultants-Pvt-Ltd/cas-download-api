@@ -9,3 +9,11 @@ services:
         value: 8080
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: MAX_FILE_SIZE_MB
+        value: 10
+      - key: RATE_LIMIT_PER_MINUTE
+        value: 60
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: API_KEY
+        sync: false
