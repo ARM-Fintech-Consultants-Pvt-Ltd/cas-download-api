@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: cas-download-api
+    name: cas-parser
     runtime: python3
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn api:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 300
@@ -9,11 +9,3 @@ services:
         value: 8080
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: MAX_FILE_SIZE_MB
-        value: 10
-      - key: RATE_LIMIT_PER_MINUTE
-        value: 60
-      - key: ALLOWED_ORIGINS
-        value: "*"
-      - key: API_KEY
-        sync: false
